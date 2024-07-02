@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { defineProps, ref } from "vue";
-import { ChevronRightIcon } from "lucide-vue-next";
 
 const props = defineProps({
     title: String,

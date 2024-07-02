@@ -3,7 +3,6 @@ import SectionWrapper from "@/components/shared/SectionWrapper.vue";
 import SectionTitle from "@/components/shared/SectionTitle.vue";
 import WhyUseCard from "@/components/app/why-use/WhyUseCard.vue";
 import {
-    ChevronRightIcon,
     type LucideIcon,
     MessageSquareMoreIcon,
     FolderTreeIcon,
