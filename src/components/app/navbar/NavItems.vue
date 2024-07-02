@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import { ref } from "vue";
 import { useRoute } from "vue-router";
 import { navItemsList } from "@/lib/navItems";
+import { RouterLink } from "vue-router";
 
 const route = useRoute();
 const currentPath = ref(route.path);
@@ -10,10 +11,10 @@ const currentPath = ref(route.path);
 
 <template>
     <div class="items-center gap-2 hidden md:flex">
-        <a
+        <RouterLink
             v-for="item in navItemsList"
             :key="item.href"
-            :href="item.href"
+            :to="item.href"
             :class="
                 cn(
                     'rounded px-6 py-2 text-sm transition-colors duration-100 hover:bg-black/5',
@@ -22,6 +23,6 @@ const currentPath = ref(route.path);
             "
         >
             {{ item.name }}
-        </a>
+        </RouterLink>
     </div>
 </template>

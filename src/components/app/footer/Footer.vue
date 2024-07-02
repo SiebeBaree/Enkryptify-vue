@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { Button } from "@/components/ui/button";
 import { PhoneIcon } from "lucide-vue-next";
+import { RouterLink } from "vue-router";
 
 const navLinks = [
     {
@@ -71,7 +72,7 @@ const navLinks = [
                         Book a call
                     </Button>
 
-                    <a href="https://docs.enkryptify.com/">
+                    <RouterLink to="https://docs.enkryptify.com/">
                         <Button
                             size="lg"
                             class="flex items-center gap-2 border-primary-foreground hover:bg-primary-foreground hover:text-primary"
@@ -79,7 +80,7 @@ const navLinks = [
                         >
                             Documentation
                         </Button>
-                    </a>
+                    </RouterLink>
                 </div>
             </div>
         </div>
@@ -89,11 +90,13 @@ const navLinks = [
                 <p class="text-3xl font-bold">Enkryptify</p>
                 <p class="text-muted-foreground">© {{ new Date().getFullYear() }} Enkryptify. All rights reserved.</p>
                 <div class="flex items-center gap-2">
-                    <a href="mailto:contact@enkryptify.com" class="text-primary"> contact@enkryptify.com </a>
+                    <RouterLink to="mailto:contact@enkryptify.com" class="text-primary">
+                        contact@enkryptify.com
+                    </RouterLink>
                     <div class="h-1 w-1 rounded-full bg-muted-foreground"></div>
-                    <a href="#">
+                    <RouterLink to="#">
                         <img src="@/icons/linkedin.svg" class="w-6 h-6" />
-                    </a>
+                    </RouterLink>
                 </div>
             </div>
 
@@ -102,12 +105,12 @@ const navLinks = [
                     <p class="text-lg font-bold">{{ nav.title }}</p>
                     <ul class="mt-3 space-y-1">
                         <li v-for="link in nav.links" :key="link.title">
-                            <a
-                                :href="link.href"
+                            <RouterLink
+                                :to="link.href"
                                 class="text-muted-foreground transition-colors duration-100 hover:text-primary"
                             >
                                 {{ link.title }}
-                            </a>
+                            </RouterLink>
                         </li>
                     </ul>
                 </div>

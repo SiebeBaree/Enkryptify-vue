@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { defineProps } from "vue";
 import { ChevronRightIcon } from "lucide-vue-next";
+import { RouterLink } from "vue-router";
 
 const props = defineProps({
     title: String,
@@ -23,10 +24,10 @@ const { title, description, href, Icon } = props;
         <p>{{ description }}</p>
 
         <div class="flex flex-grow items-end">
-            <a :href="href" class="flex items-center transition-all duration-100 hover:text-primary">
+            <RouterLink :to="href ?? '#'" class="flex items-center transition-all duration-100 hover:text-primary">
                 <span class="font-medium">Learn more</span>
                 <ChevronRightIcon :size="20" class="ml-1" />
-            </a>
+            </RouterLink>
         </div>
     </div>
 </template>

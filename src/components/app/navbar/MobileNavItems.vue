@@ -4,6 +4,7 @@ import { navItemsList } from "@/lib/navItems";
 import { useRoute } from "vue-router";
 import { ref } from "vue";
 import { Button } from "@/components/ui/button";
+import { RouterLink } from "vue-router";
 
 const route = useRoute();
 const currentPath = ref(route.path);
@@ -12,10 +13,10 @@ const currentPath = ref(route.path);
 <template>
     <div className="flex flex-col justify-between h-full gap-8 pt-8">
         <div className="flex flex-col gap-2">
-            <a
+            <RouterLink
                 v-for="item in navItemsList"
                 :key="item.href"
-                :href="item.href"
+                :to="item.href"
                 :class="
                     cn(
                         'flex items-center gap-3 p-2 rounded transition-all duration-100',
@@ -27,7 +28,7 @@ const currentPath = ref(route.path);
             >
                 <component :is="item.Icon" class="h-5 w-5" />
                 <p className="transition-all duration-100">{{ item.name }}</p>
-            </a>
+            </RouterLink>
         </div>
 
         <Button class="mb-6">Contact Us</Button>

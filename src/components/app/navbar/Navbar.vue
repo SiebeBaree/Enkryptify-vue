@@ -4,11 +4,12 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/co
 import { Button } from "@/components/ui/button";
 import { MenuIcon } from "lucide-vue-next";
 import MobileNavItems from "./MobileNavItems.vue";
+import { RouterLink } from "vue-router";
 </script>
 
 <template>
     <nav class="container flex items-center justify-between gap-8 py-4">
-        <a href="/" class="text-2xl font-bold">Enkryptify</a>
+        <RouterLink to="/" class="text-2xl font-bold">Enkryptify</RouterLink>
 
         <div class="flex items-center gap-4">
             <NavItems />

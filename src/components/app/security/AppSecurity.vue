@@ -2,6 +2,7 @@
 import SectionWrapper from "@/components/shared/SectionWrapper.vue";
 import SectionTitle from "@/components/shared/SectionTitle.vue";
 import SecurityCard from "@/components/app/security/SecurityCard.vue";
+import { RouterLink } from "vue-router";
 
 type Security = {
     title: string;
@@ -37,13 +38,13 @@ const cards: Security[] = [
 
         <p class="mt-6 text-center">
             Still unsure?
-            <a
+            <RouterLink
                 class="cursor-pointer font-semibold text-primary hover:underline"
-                href="https://docs.enkryptify.com/security/overview"
+                to="https://docs.enkryptify.com/security/overview"
                 target="_blank"
             >
                 Read our security documentation
-            </a>
+            </RouterLink>
         </p>
     </SectionWrapper>
 </template>
